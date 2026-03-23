@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>VP Hospitality Group | Excelencia en Hospitalidad</title>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --azul-marino: #001f3f;
+            --dorado: #d4af37;
+            --blanco: #ffffff;
+            --gris-claro: #f5f5f5;
+            --transicion: all 0.3s ease;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            line-height: 1.6;
+            color: var(--azul-marino);
+            background-color: var(--blanco);
+        }
+
+        /* --- Navegación --- */
+        header {
+            background: var(--azul-marino);
+            padding: 1rem 5%;
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.3);
+        }
+
+        .logo {
+            color: var(--dorado);
+            font-weight: 700;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        nav a {
+            color: var(--blanco);
+            text-decoration: none;
+            margin-left: 20px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: var(--transicion);
+        }
+
+        nav a:hover {
+            color: var(--dorado);
+        }
+
+        /* --- Sección Hero --- */
+        #inicio {
+            height: 100vh;
+            background: linear-gradient(rgba(0,31,63,0.7), rgba(0,31,63,0.7)), url('https://images.unsplash.com/photo-1566073771259-6a8506099945?auto=format&fit=crop&q=80&w=2070') no-repeat center center/cover;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: var(--blanco);
+            padding: 0 20px;
+        }
+
+        #inicio h1 {
+            font-size: 3rem;
+            margin-bottom: 1rem;
+            border-bottom: 3px solid var(--dorado);
+            padding-bottom: 10px;
+        }
+
+        .btn-dorado {
+            background: var(--dorado);
+            color: var(--azul-marino);
+            padding: 12px 30px;
+            text-decoration: none;
+            font-weight: 700;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: var(--transicion);
+        }
+
+        .btn-dorado:hover {
+            background: var(--blanco);
+            transform: translateY(-3px);
+        }
+
+        /* --- Secciones Generales --- */
+        section {
+            padding: 100px 10% 60px;
+        }
+
+        h2 {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            position: relative;
+        }
+
+        h2::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--dorado);
+            position: absolute;
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+        }
+
+        /* --- Servicios (Grid Editable) --- */
+        .servicios-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 30px;
+        }
+
+        .servicio-card {
+            background: var(--gris-claro);
+            padding: 40px;
+            text-align: center;
+            border-bottom: 5px solid var(--dorado);
+            transition: var(--transicion);
+        }
+
+        .servicio-card:hover {
+            transform: scale(1.05);
+            background: var(--azul-marino);
+            color: var(--blanco);
+        }
+
+        /* --- Casos de Éxito --- */
+        #casos { background: var(--gris-claro); }
+
+        .casos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 20px;
+        }
+
+        .caso-card {
+            position: relative;
+            overflow: hidden;
+            height: 250px;
+            border-radius: 8px;
+        }
+
+        .caso-card img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transicion);
+        }
+
+        .caso-info {
+            position: absolute;
+            bottom: 0;
+            background: rgba(0,31,63,0.9);
+            color: var(--dorado);
+            width: 100%;
+            padding: 15px;
+            transform: translateY(100%);
+            transition: var(--transicion);
+        }
+
+        .caso-card:hover .caso-info { transform: translateY(0); }
+        .caso-card:hover img { transform: scale(1.1); }
+
+        /* --- Footer --- */
+        footer {
+            background: var(--azul-marino);
+            color: var(--blanco);
+            text-align: center;
+            padding: 40px;
+        }
+
+        /* Responsivo */
+        @media (max-width: 768px) {
+            header { flex-direction: column; }
+            nav { margin-top: 15px; }
+            nav a { margin: 0 10px; font-size: 0.8rem; }
+            #inicio h1 { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">VP HOSPITALITY GROUP</div>
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#servicios">Servicios</a>
+            <a href="#casos">Éxitos</a>
+            <a href="#contacto">Contacto</a>
+        </nav>
+    </header>
+
+    <section id="inicio">
+        <h1>Excelencia en Hospitalidad</h1>
+        <p>Elevando los estándares de la industria con distinción y lujo.</p>
+        <a href="#servicios" class="btn-dorado">Ver Servicios</a>
+    </section>
+
+    <section id="servicios">
+        <h2>Nuestros Servicios</h2>
+        <div class="servicios-container">
+            <div class="servicio-card">
+                <h3>Consultoría Premium</h3>
+                <p>Optimización operativa para hoteles y restaurantes de alta gama.</p>
+            </div>
+            <div class="servicio-card">
+                <h3>Gestión de Propiedades</h3>
+                <p>Administración integral con enfoque en la rentabilidad y el servicio.</p>
+            </div>
+            <div class="servicio-card">
+                <h3>Branding Gastronómico</h3>
+                <p>Creación de conceptos únicos para el sector hospitality.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="casos">
+        <h2>Casos de Éxito</h2>
+        <div class="casos-container">
+            <div class="caso-card">
+                <img src="https://images.unsplash.com/photo-1542314831-068cd1dbfeeb?auto=format&fit=crop&w=1000&q=80" alt="Caso 1">
+                <div class="caso-info">
+                    <h4>Luxury Beach Resort</h4>
+                    <p>Rediseño de experiencia al cliente y branding.</p>
+                </div>
+            </div>
+            <div class="caso-card">
+                <img src="https://images.unsplash.com/photo-1551882547-ff43c69e5cf2?auto=format&fit=crop&w=1000&q=80" alt="Caso 2">
+                <div class="caso-info">
+                    <h4>Boutique City Hotel</h4>
+                    <p>Optimización de procesos operativos y personal.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer id="contacto">
+        <p>&copy; 2026 VP Hospitality Group - Ciudad de México</p>
+        <p style="color: var(--dorado); margin-top: 10px;">contacto@vphg.com</p>
+    </footer>
+
+</body>
+</html>
